@@ -3,6 +3,8 @@ const Client = new Discord.Client();
 
 const { botName, botID, prefix, token, redditToken, subredditName, nswfAllowed, redditChannel, AdminRole, endMessage } = require('./config.json');
 
+// redditChannel overwrite for testing
+// redditChannel = "775991341431521280";
 
 Client.once('ready', () =>  {
 

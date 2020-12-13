@@ -4,8 +4,8 @@
   "description": "My personal discord bot. It does things",
   "main": "main.js",
   "scripts": {
-    "test": "testing.js",
-    "start": "main.js"
+    "test": "node testing.js",
+    "start": "node main.js"
   },
   "repository": {
     "type": "git",

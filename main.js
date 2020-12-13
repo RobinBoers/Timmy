@@ -47,9 +47,12 @@ client.on('message', message => {
         message.channel.send(reply);
 
     }
-    else if (msg === prefix + `userinfo`) {
+    else if (msg === prefix + `userinfo` || msg === prefix + `stats`) {
 
-        var reply = `Your avatar:\n<${message.author.displayAvatarURL({ format: "png", dynamic: true })}>\nYour username: ${message.author.username}\nYour ID: ${message.author.id}`;
+        const imageEmbed = new Discord.MessageEmbed().setImage(message.author.displayAvatarURL({ format: "jpg", dynamic: false }));
+        message.channel.send(imageEmbed);
+
+        var reply = `Your username: ${message.author.username}\nYour ID: \` ${message.author.id} \``;
         console.log(botName+": "+reply+endMessage);
         message.channel.send(reply);
 

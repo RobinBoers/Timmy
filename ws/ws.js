@@ -3,6 +3,8 @@ const hbs = require('express-handlebars')
 const bodyParser = require('body-parser')
 const path = require('path')
 
+const { botName, botID, prefix, token, redditToken, subredditName, nswfAllowed, AdminRole, endMessage } = require('../config.json');
+
 class WebSocket {
 
     constructor(token, port, client) {
@@ -95,7 +97,7 @@ class WebSocket {
                 var reply = text;
                 console.log(botName+": "+reply+endMessage);
                 channel.send(reply);
-                
+
             }
 
         })

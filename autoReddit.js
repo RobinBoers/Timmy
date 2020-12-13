@@ -29,4 +29,4 @@ function nsfw() {
     });
 }
 
-Client.login('Nzc0OTc0ODQxMjk5OTI3MTAx.X6flkA.qvRYvQC-qXbc90cSlIbNsYR01nE');
+Client.login(token);

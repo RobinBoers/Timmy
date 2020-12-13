@@ -1,8 +1,11 @@
 {
 	"botName": "Fabby",
-	"prefix": "fabby ",
 	"token": "your-token-here",
 	"redditToken":"your-token-here",
+	"botID":"787674392510595092",
+	"prefix": "f.",
+	"subredditName":"subreddit-name-here",
 	"nswfAllowed":true,
-	"AdminRole":"Bloedverwant"
+	"AdminRole":"Bloedverwant",
+	"endMessage":"\n==="
 }

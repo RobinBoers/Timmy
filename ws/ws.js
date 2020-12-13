@@ -40,8 +40,6 @@ class WebSocket {
             var _token = req.query.token
             var serverID = req.query.serverID
 
-            console.log(serverID)
-
             if(!this.checkToken(_token)) {
                 res.render('error', { title: 'ERROR', errtype: 'INVALID TOKEN'})
                 return;
@@ -93,7 +91,11 @@ class WebSocket {
             var channel = this.client.guilds.cache.get(serverID).channels.cache.get(channelID)
 
             if(channel) {
-                channel.send(text);
+
+                var reply = text;
+                console.log(botName+": "+reply+endMessage);
+                channel.send(reply);
+                
             }
 
         })

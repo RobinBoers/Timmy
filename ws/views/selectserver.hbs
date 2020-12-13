@@ -1,0 +1,9 @@
+<form action="/" method="GET">
+    <input type="hidden" name="token" value="{{token}}">
+    <select name="serverID">
+        {{#each serverList}}
+            <option value="{{this.id}}">{{this.name}}</option>
+        {{/each}}
+    </select>
+    <input type="submit" value="Select">
+</form>

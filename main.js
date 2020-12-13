@@ -1,16 +1,27 @@
 // require the discord.js module
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const WS = require('./ws/ws')
 
 // get tokens, prefix and other settings
 const { botName, botID, prefix, token, redditToken, subredditName, nswfAllowed, AdminRole, endMessage } = require('./config.json');
 
+var ws = new WS('123456', 5665, client)
 
 // when the client is ready, run this code
 // this event will only trigger one time after logging in
 client.once('ready', () => {
-    console.log('Fabby is Ready to Roll!'+endMessage);
+
+    // List servers the bot is connected to
+    console.log("Connected to these Servers:")
+    client.guilds.cache.forEach((guild) => {
+
+        console.log(" - " + guild.name)
+
+    });
+    console.log('\nFabby is Ready to Roll!'+endMessage);
     // message.channel.send('Boop.');
+
 });
 
 // listen for messages
@@ -46,6 +57,15 @@ client.on('message', message => {
         console.log(botName+": "+reply+endMessage);
         message.channel.send(reply);
 
+        // List all channels
+        console.log("\n"+botName+" has found these channels in this server:")
+
+        message.guild.channels.cache.forEach((channel) => {
+            console.log(` - ${channel.name} (${channel.type}) - ${channel.id}`)
+        })
+        
+        console.log(endMessage)
+
     }
     else if (msg === prefix + `userinfo` || msg === prefix + `stats`) {
 
@@ -74,25 +94,24 @@ client.on('message', message => {
         // Using snoowrap to access reddit API
         var snoowrap = require('snoowrap');
 
-            // Snoowrap config, logging into a burner account with username + password
-            const r = new snoowrap({
-                userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:82.0) Gecko/20100101 Firefox/82.0',
-                clientId: 'wxF4146B4858Sg',
-                clientSecret: redditToken,
-                username: 'Sea-Box5852',
-                password: 'Sea-Box5852'
-            });
+        // Snoowrap config, logging into a burner account with username + password
+        const r = new snoowrap({
+            userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:82.0) Gecko/20100101 Firefox/82.0',
+            clientId: 'wxF4146B4858Sg',
+            clientSecret: redditToken,
+            username: 'Sea-Box5852',
+            password: 'Sea-Box5852'
+        });
 
-            // Get random submission (=post) from the subreddit configured in config.json
-            post = r.getRandomSubmission(subredditName).then((post) => {
+        // Get random submission (=post) from the subreddit configured in config.json
+        post = r.getRandomSubmission(subredditName).then((post) => {
 
-                var link = post.url;
+            var link = post.url;
 
-                console.log(botName+": "+link+endMessage);
-                message.channel.send(link);
+            console.log(botName+": "+link+endMessage);
+            message.channel.send(link);
 
-            });
-
+        });
     }
     
 });

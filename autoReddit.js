@@ -8,6 +8,8 @@ const { botName, botID, prefix, token, redditToken, subredditName, nswfAllowed, 
 
 Client.once('ready', () =>  {
 
+    Client.channels.cache.get(redditChannel).send("AutoReddit Module is online.");
+
     setInterval(nsfw, 1000);
 
 });

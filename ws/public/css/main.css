@@ -10,3 +10,8 @@ body {
 main {
     min-height: 600px;
 }
+
+a {
+    color: royalblue !important;
+    text-decoration: none;
+}

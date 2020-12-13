@@ -1,0 +1,30 @@
+{
+  "name": "fabby",
+  "version": "1.0.0",
+  "description": "My personal discord bot. It does things",
+  "main": "main.js",
+  "scripts": {
+    "test": "testing.js",
+    "start": "main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RobinBoers/Fabby.git"
+  },
+  "keywords": [
+    "discordbot",
+    "bot",
+    "api",
+    "reddit",
+    "private"
+  ],
+  "author": "Robijntje",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RobinBoers/Fabby/issues"
+  },
+  "homepage": "https://github.com/RobinBoers/Fabby#readme",
+  "dependencies": {
+    "discord.js": "^12.5.1"
+  }
+}

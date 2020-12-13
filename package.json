@@ -4,7 +4,7 @@
   "description": "My personal discord bot. It does things",
   "main": "main.js",
   "scripts": {
-    "test": "node testing.js",
+    "test": "node autoreddit.js",
     "start": "node main.js"
   },
   "repository": {

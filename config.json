@@ -1,12 +1,12 @@
 {
 	"botName": "Fabby",
-	"token": "your-token-here",
-	"redditToken":"your-token-here",
 	"botID":"787674392510595092",
 	"prefix": "f.",
-	"subredditName":"subreddit-name-here",
+	"token": "your-token-here",
+	"redditToken":"your-token-here",
+	"subredditName":"unixporn",
 	"nswfAllowed":true,
 	"redditChannel":"787295315870744577",
-	"AdminRole":"Bloedverwant",
+	"AdminRole":"Owner",
 	"endMessage":"\n==="
 }

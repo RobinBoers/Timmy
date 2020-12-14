@@ -1,15 +1,11 @@
 <iframe style="display: none;" name="dummyframe" id="dummyframe"></iframe>
 
-<a href="http://localhost:5665?token={{token}}&serverID=">🠄 Select other server</a><br><br>
+<a href="http://localhost:5665?token={{token}}&serverID={{guild}}&channelID=">🠄 Select other channel</a><br><br>
 
 <form action="/sendMessage" method="POST" target="dummyframe">
     <input type="hidden" name="token" value="{{token}}">
     <input type="hidden" name="guild" value="{{guild}}">
-    <select name="channelID">
-        {{#each channelList}}
-            <option value="{{this.id}}">{{this.name}}</option>
-        {{/each}}
-    </select>
+    <input type="hidden" name="channel" value="{{channel}}">
     <input type="text" name="text" placeholder="MESSAGE TEXT...">
     <input type="submit" value="Send">
 </form>

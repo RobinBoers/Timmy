@@ -1,0 +1,13 @@
+
+<a href="http://localhost:5665?token={{token}}&serverID=">🠄 Select other server</a><br><br>
+
+<form action="/" method="GET" id="channelSelect">
+    <input type="hidden" name="token" value="{{token}}">
+    <input type="hidden" name="serverID" value="{{guild}}">
+    <select name="channelID" onchange='document.getElementById("channelSelect").submit();'>
+        <option autofocus disabled>Choose a channel</option>
+        {{#each channelList}}
+            <option value="{{this.id}}">{{this.name}}</option>
+        {{/each}}
+    </select>
+</form>

@@ -40,6 +40,7 @@ class WebSocket {
         // http://localhost:port?token=123456
         this.app.get('/', (req, res) => {
             var _token = req.query.token
+            var channelID = req.query.channelID
             var serverID = req.query.serverID
 
             if(!this.checkToken(_token)) {
@@ -47,7 +48,16 @@ class WebSocket {
                 return;
             }
 
-            if(serverID !== "") {
+            if(serverID !== "" && channelID !== "") {
+
+                res.render('index', { 
+                    title: 'FabbyJS',
+                    token: _token,
+                    guild: serverID,
+                    channel: channelID
+                })
+
+            } else if(channelID === "") {
 
                 var channelList = []
                 this.client.guilds.cache.get(serverID).channels.cache
@@ -56,14 +66,15 @@ class WebSocket {
                     channelList.push({ id: c.id, name : c.name})
                 })
 
-                res.render('index', { 
+                res.render('selectchannel', { 
                     title: 'FabbyJS',
                     token: _token,
                     guild: serverID,
                     channelList
                 })
 
-            } else {
+            }
+            else {
                 var serverList = []
                 this.client.guilds.cache.forEach(s => {
                     serverList.push({ id: s.id, name : s.name})
@@ -82,11 +93,11 @@ class WebSocket {
 
             var _token = req.body.token
             var text = req.body.text
-            var channelID = req.body.channelID
+            var channelID = req.body.channel
             var serverID = req.body.guild
 
             if(!this.checkToken(_token)) {
-                res.render('error', { title: 'ERROR', errtype: 'INVALID TOKEN'})
+                res.render('error', { title: 'Login failed', errtype: 'INVALID TOKEN'})
                 return;
             }
 

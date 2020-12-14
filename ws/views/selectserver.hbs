@@ -1,9 +1,10 @@
-<form action="/" method="GET">
+<form action="/" method="GET" id="serverSelect">
     <input type="hidden" name="token" value="{{token}}">
-    <select name="serverID">
+    <input type="hidden" name="channelID" value="">
+    <select name="serverID" onchange='document.getElementById("serverSelect").submit();'>
+        <option autofocus disabled>Choose a server</option>
         {{#each serverList}}
             <option value="{{this.id}}">{{this.name}}</option>
         {{/each}}
     </select>
-    <input type="submit" value="Select">
 </form>

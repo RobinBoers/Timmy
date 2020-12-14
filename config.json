@@ -1,9 +1,9 @@
 {
 	"botName": "Timmy",
 	"botID":"787674392510595092",
-	"prefix": "f.",
 	"token": "your-token-here",
 	"redditToken":"your-token-here",
+	"prefix": "t.",
 	"subredditName":"unixporn",
 	"nswfAllowed":true,
 	"redditChannel":"787295315870744577",

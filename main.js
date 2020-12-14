@@ -26,11 +26,6 @@ client.once('ready', () => {
 
 // listen for messages
 client.on('message', message => {
-    if(message.author.bot) return;
-    console.log(message.author.username+": "+message.content+endMessage);
-    // msg = message.content.toLowerCase();
-    msg = message.content;
-    // console.log("Lowercase message: "+ msg);
 
     // Set correct nickname
     if (message.guild.members.cache.get(botID).hasPermission("MANAGE_NICKNAMES") && message.guild.members.cache.get(botID).hasPermission("CHANGE_NICKNAME")) {
@@ -38,6 +33,12 @@ client.on('message', message => {
     } else {
         message.channel.send("I dont have the permissons to change my nickname in this server.");
     }
+
+    if(message.author.bot) return;
+    console.log(message.author.username+": "+message.content+endMessage);
+    // msg = message.content.toLowerCase();
+    msg = message.content;
+    // console.log("Lowercase message: "+ msg);
 
     if (msg === prefix + `ping`) {
         var reply = "Pong.";

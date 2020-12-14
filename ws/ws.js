@@ -51,7 +51,7 @@ class WebSocket {
             if(serverID !== "" && channelID !== "") {
 
                 res.render('index', { 
-                    title: 'FabbyJS',
+                    title: 'TimmyJS',
                     token: _token,
                     guild: serverID,
                     channel: channelID
@@ -67,7 +67,7 @@ class WebSocket {
                 })
 
                 res.render('selectchannel', { 
-                    title: 'FabbyJS',
+                    title: 'TimmyJS',
                     token: _token,
                     guild: serverID,
                     channelList
@@ -81,7 +81,7 @@ class WebSocket {
                 })
 
                 res.render('selectserver', { 
-                    title: 'FabbyJS',
+                    title: 'TimmyJS',
                     token: _token,
                     serverList
                 })

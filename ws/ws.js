@@ -39,8 +39,24 @@ class WebSocket {
 
     registerRoots() {
 
-        // http://localhost:port?token=123456
         this.app.get('/', (req, res) => {
+
+            var _token = req.query.token
+
+            if(!this.checkToken(_token)) {
+                res.render('error', { title: 'Login failed', errtype: 'INVALID TOKEN'})
+                return;
+            }
+
+            res.render('openpanel', { 
+                title: 'loading',
+                token: _token,
+            })
+
+        })
+
+        // http://localhost:port?token=123456
+        this.app.get('/adminPanel', (req, res) => {
             var _token = req.query.token
             var channelID = req.query.channelID
             var serverID = req.query.serverID

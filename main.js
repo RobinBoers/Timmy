@@ -19,7 +19,7 @@ client.once('ready', () => {
         console.log(" - " + guild.name)
 
     });
-    console.log('\nFabby is Ready to Roll!'+endMessage);
+    console.log('\n'+botName+' is Ready to Roll!'+endMessage);
     // message.channel.send('Boop.');
 
 });

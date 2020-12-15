@@ -161,7 +161,7 @@ class WebSocket {
 
                 if(channel) {
             
-                    post = r.getRandomSubmission(subreddit).then((post) => {
+                    var post = r.getRandomSubmission(subreddit).then((post) => {
                         var link = post.url;
                         var reply = link;
 
@@ -172,7 +172,7 @@ class WebSocket {
                 }
             }
 
-            autoReddit();
+            setInterval(autoReddit, interval);
         })
 
     }

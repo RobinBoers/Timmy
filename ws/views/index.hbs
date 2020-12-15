@@ -1,11 +1,11 @@
-<iframe style="display: none;" name="dummyframe" id="dummyframe"></iframe>
+<iframe style="display: none;" name="output" id="output"></iframe>
 
 <a href="http://localhost:5665?token={{token}}&serverID={{guild}}&channelID=">🠄 Select other channel</a><br><br>
 
-<form action="/sendMessage" method="POST" target="dummyframe">
+<form action="/sendMessage" method="POST" id="messageForm" target="output">
     <input type="hidden" name="token" value="{{token}}">
     <input type="hidden" name="guild" value="{{guild}}">
     <input type="hidden" name="channel" value="{{channel}}">
     <input type="text" name="text" placeholder="MESSAGE TEXT...">
-    <input type="submit" value="Send">
+    <button onclick="document.getElementById("messageForm").submit();">Send</button>
 </form>

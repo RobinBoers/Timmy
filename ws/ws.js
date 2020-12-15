@@ -4,6 +4,8 @@ const bodyParser = require('body-parser')
 const path = require('path')
 
 const { botName, botID, prefix, token, redditToken, subredditName, nswfAllowed, AdminRole, endMessage } = require('../config.json');
+const { unwatchFile } = require('fs');
+const { ENGINE_METHOD_DH } = require('constants');
 
 class WebSocket {
 
@@ -42,6 +44,8 @@ class WebSocket {
             var _token = req.query.token
             var channelID = req.query.channelID
             var serverID = req.query.serverID
+
+            console.log ("Connection at admin panel, with serverID "+serverID+" and channelID "+channelID+endMessage)
 
             if(!this.checkToken(_token)) {
                 res.render('error', { title: 'ERROR', errtype: 'INVALID TOKEN'})

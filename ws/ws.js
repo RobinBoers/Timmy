@@ -133,6 +133,48 @@ class WebSocket {
 
         })
 
+        this.app.post('/runAutoReddit', (req, res) => {
+
+            var _token = req.body.token
+            var interval = req.body.interval
+            var subreddit = req.body.sub
+            var channelID = req.body.channel
+            var serverID = req.body.guild
+
+            if(!this.checkToken(_token)) {
+                res.render('error', { title: 'Login failed', errtype: 'INVALID TOKEN'})
+                return;
+            }
+
+            var channel = this.client.guilds.cache.get(serverID).channels.cache.get(channelID)
+
+            function autoReddit() {
+                var snoowrap = require('snoowrap');
+            
+                const r = new snoowrap({
+                    userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:82.0) Gecko/20100101 Firefox/82.0',
+                    clientId: 'wxF4146B4858Sg',
+                    clientSecret: redditToken,
+                    username: 'Sea-Box5852',
+                    password: 'Sea-Box5852'
+                });
+
+                if(channel) {
+            
+                    post = r.getRandomSubmission(subreddit).then((post) => {
+                        var link = post.url;
+                        var reply = link;
+
+                        console.log(botName+": "+reply+endMessage);
+                        channel.send(reply);
+
+                    });
+                }
+            }
+
+            autoReddit();
+        })
+
     }
 
 }

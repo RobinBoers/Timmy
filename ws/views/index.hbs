@@ -2,10 +2,21 @@
 
 <a href="http://localhost:5665/adminPanel?token={{token}}&serverID={{guild}}&channelID=">🠄 Select other channel</a><br><br>
 
-<form action="/sendMessage" method="POST" id="messageForm" target="output">
+{{!-- <form action="/sendMessage" method="POST" id="messageForm" target="output">
     <input type="hidden" name="token" value="{{token}}">
     <input type="hidden" name="guild" value="{{guild}}">
     <input type="hidden" name="channel" value="{{channel}}">
     <input type="text" name="text" placeholder="MESSAGE TEXT...">
     <button onclick="document.getElementById("messageForm").submit();">Send</button>
+</form> --}}
+
+<form action="/runAutoReddit" method="POST" id="messageForm" target="output">
+    <input type="hidden" name="token" value="{{token}}">
+    <input type="hidden" name="guild" value="{{guild}}">
+    <input type="hidden" name="channel" value="{{channel}}">
+    <label>interval</label><br>
+    r/<input type="text" name="sub" placeholder="Subreddit...">
+    <label>interval</label><br>
+    <input type="number" name="interval" placeholder="Interval..."> ms
+    <button onclick="document.getElementById("messageForm").submit();">RUN</button>
 </form>

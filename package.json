@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "My personal discord bot. It does things",
   "main": "main.js",
+  "bin": "main.js",
   "scripts": {
     "test": "node autoreddit.js",
     "start": "node main.js"

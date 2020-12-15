@@ -44,7 +44,7 @@ class WebSocket {
             var _token = req.query.token
 
             if(!this.checkToken(_token)) {
-                res.render('error', { title: 'Login failed', errtype: 'INVALID TOKEN'})
+                res.render('error', { title: 'login failed', errtype: 'INVALID TOKEN'})
                 return;
             }
 
@@ -64,7 +64,7 @@ class WebSocket {
             console.log ("Connection at admin panel, with serverID "+serverID+" and channelID "+channelID+endMessage)
 
             if(!this.checkToken(_token)) {
-                res.render('error', { title: 'ERROR', errtype: 'INVALID TOKEN'})
+                res.render('error', { title: 'login failed', errtype: 'INVALID TOKEN', sol: '<a href="?token='+_token+'>Login</a>'})
                 return;
             }
 
@@ -117,7 +117,7 @@ class WebSocket {
             var serverID = req.body.guild
 
             if(!this.checkToken(_token)) {
-                res.render('error', { title: 'Login failed', errtype: 'INVALID TOKEN'})
+                res.render('error', { title: 'login failed', errtype: 'INVALID TOKEN'})
                 return;
             }
 
@@ -142,7 +142,7 @@ class WebSocket {
             var serverID = req.body.guild
 
             if(!this.checkToken(_token)) {
-                res.render('error', { title: 'Login failed', errtype: 'INVALID TOKEN'})
+                res.render('error', { title: 'login failed', errtype: 'INVALID TOKEN'})
                 return;
             }
 

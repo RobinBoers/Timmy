@@ -6,7 +6,7 @@
     <input type="hidden" name="serverID" value="{{guild}}">
     <label>choose channel:</label><br>
     <select name="channelID" onchange='document.getElementById("channelSelect").submit();'>
-        <option autofocus disabled>Choose a channel</option>
+        <option autofocus read-only>Choose a channel</option>
         {{#each channelList}}
             <option value="{{this.id}}">{{this.name}}</option>
         {{/each}}

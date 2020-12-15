@@ -5,7 +5,7 @@
     <input type="hidden" name="channelID" value="">
     <label>choose server:</label><br>
     <select name="serverID" onchange='document.getElementById("serverSelect").submit();'>
-        <option autofocus disabled>Choose a server</option>
+        <option autofocus read-only>Choose a server</option>
         {{#each serverList}}
             <option value="{{this.id}}">{{this.name}}</option>
         {{/each}}

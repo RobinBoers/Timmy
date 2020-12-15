@@ -5,11 +5,15 @@
   "main": "main.js",
   "scripts": {
     "test": "node autoreddit.js",
-    "start": "node main.js > log-file.txt"
+    "start": "node main.js"
+  },
+  "pkg": {
+    "assets": [ "node_modules/**/*", "ws/**/*", "config.json" ],
+    "targets": [ "node12-macos-x64", "node10-win-x64" ]
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RobinBoers/Fabby.git"
+    "url": "git+https://github.com/RobinBoers/Timmy.git"
   },
   "keywords": [
     "discordbot",
@@ -21,9 +25,9 @@
   "author": "Robijntje",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/RobinBoers/Fabby/issues"
+    "url": "https://github.com/RobinBoers/Timmy/issues"
   },
-  "homepage": "https://github.com/RobinBoers/Fabby#readme",
+  "homepage": "https://github.com/RobinBoers/Timmy#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
     "discord.js": "^12.5.1",

@@ -1,4 +1,5 @@
 # Timmy
+
 Timmy is a bot that can pull images from reddit at a interval. It is using my AutoReddit script,<br>and has a custom control panel on a local server.
 I built it using Express, discord.js, the Reddit API and snoowrap.
 
@@ -13,6 +14,7 @@ The bot also has some basic commands. I have listed them here:
 ![screenshot](assets/screenshot.png)
 
 ## Settings to configure
+
 The config file has various settings to configure, like the prefix, the botname, token, reddittoken and some other things.<br>
 Some settings are not used by this bot, but are just in all my bots.
 
@@ -25,4 +27,4 @@ This is what every setting does. Most of them speak for themselves
 - redditToken: the token used for the reddit api.
 - subredditName: the default subreddit used.
 - redditChannel: the default channel used by AutoReddit
-- enMessage: a visuale thing for logs to see where messages end (see console)
+- endMessage: a visuale thing for logs to see where messages end (see console)

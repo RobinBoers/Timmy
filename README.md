@@ -27,4 +27,4 @@ This is what every setting does. Most of them speak for themselves
 - redditToken: the token used for the reddit api.
 - subredditName: the default subreddit used.
 - redditChannel: the default channel used by AutoReddit
-- endMessage: a visuale thing for logs to see where messages end (see console)
+- endMessage: a visual thing for logs to see where messages end (see console)

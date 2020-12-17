@@ -10,6 +10,8 @@ The bot also has some basic commands. I have listed them here:
 - Clear: prune the chat, it deletes 100 messages max.
 - GetReddit: get content from reddit.
 
+[screenshot](assets/screenshot.png)
+
 ## Settings to configure
 The config file has various settings to configure, like the prefix, the botname, token, reddittoken and some other things.<br>
 Some settings are not used by this bot, but are just in all my bots.

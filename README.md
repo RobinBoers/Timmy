@@ -28,3 +28,4 @@ This is what every setting does. Most of them speak for themselves
 - subredditName: the default subreddit used.
 - redditChannel: the default channel used by AutoReddit
 - endMessage: a visual thing for logs to see where messages end (see console)
+
